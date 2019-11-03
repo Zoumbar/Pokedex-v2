@@ -8,9 +8,9 @@ import Container from './components/layout/container'
 function App() {
   return (
     <div className="App">
-      <Nav></Nav>
+      <Nav/>
       <div className="container">
-        <Container></Container>
+        <Container/>
       </div>
     </div>
   );
