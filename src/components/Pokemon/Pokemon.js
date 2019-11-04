@@ -3,10 +3,10 @@ import axios from 'axios'
 
 export default class Pokemon extends Component {
     state = {
-        name= '',
+        name: '',
         pokemonIndex:'',
         imageUrl:'',
-        types= [],
+        types: [],
         description: '',
         
     };
