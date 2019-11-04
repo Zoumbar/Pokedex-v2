@@ -2,14 +2,27 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import '../../App.css'
 import loader from '../Pokemon/loader.gif'
+import {Link} from 'react-router-dom'
 
 
 const Sprite = styled.img`
     width: 50%;
     height: 50%;
-    display:none;
+    display:none
 
 `
+const StyledLink = styled(Link)`
+    text-decoration:none;
+    color:black;
+    &:focus,
+    &:hover,
+    &:visited,
+    &:link,
+    &:active{
+        text-decoration:none;
+    }
+
+`;
 
 export default class Cell extends Component {
     state ={
@@ -33,6 +46,7 @@ export default class Cell extends Component {
         
         return (
             <div className="col-md-3 col-sm-6 mb-5">
+                <StyledLink to={`pokemon/${this.state.pokemonIndex}`}>
                 <div className="card">
                     <h5 className="card-header">Pokemon n°{this.state.pokemonIndex}</h5>
                     {this.state.imageLoading ? (
@@ -54,7 +68,8 @@ export default class Cell extends Component {
                     <div className="card-body mx-auto">
                         <h6 className="card-title">{this.state.name.toLocaleLowerCase().split(' ').map(letter => letter.charAt(0).toUpperCase() + letter.substring(1)).join(' ')}</h6>
                     </div>
-                </div>   
+                </div>
+                </StyledLink>   
             </div>
         )
     }
